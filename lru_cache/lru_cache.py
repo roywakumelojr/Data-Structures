@@ -44,6 +44,19 @@ class LRUCache:
 
     ## LECTURE SOLUTION
     def get(self, key):
+        # If the key is in the storage
+        if key in self.storage:
+            # Move it to the end
+            node = self.storage[key]
+            self.order.move_to_end(node)
+
+            # Return the value
+            return node.value[1]
+
+        #If not
+        else:
+            # Return None
+            return None
 
     """
     Adds the given key-value pair to the cache. The newly-
@@ -106,15 +119,15 @@ class LRUCache:
             return
 
            
-            # Check and see if the cache is full
-            if self.size = self.limit:
-                # If cache is full
-                # Remove the oldest from the dictionary
-                del self.storage[self.order.head.value[0]] 
-                # Remove oldest from the linkedlist
-                self.order.remove_from_head()
-                # Reduce the size
-                self.size -= 1
+        # Check and see if the cache is full
+        if self.size >= self.limit:
+            # If cache is full
+            # Remove the oldest from the dictionary
+            del self.storage[self.order.head.value[0]] 
+            # Remove oldest from the linkedlist
+            self.order.remove_from_head()
+            # Reduce the size
+            self.size -= 1
 
         # Add the key and value to the linkedlist
         self.order.add_to_tail((key, value))
