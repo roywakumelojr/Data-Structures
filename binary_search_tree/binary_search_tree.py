@@ -166,11 +166,33 @@ class BinarySearchTree:
     # in an iterative breadth first traversal
     def bft_print(self, node):
         pass
+    """
+    #### LECTURE NOTES // PSEUDO CODE ####
+    ** Breadth First Traversal Steps **
+        initialize a queue
+        push root to queue
+        while stack not empty
+        pop top item out of queue into temp
+        DO THE THING!!!!!!
+        if temp has right right put into queue
+        if temp has left left put into queue
+    """
 
     # Print the value of every node, starting with the given node,
     # in an iterative depth first traversal
     def dft_print(self, node):
         pass
+
+    """
+    #### LECTURE NOTES // PSEUDO CODE ####
+    ** Deep First Traversal steps: initialize a stack **
+        push root to stack
+        while stack not empty
+        pop top item out of stack into temp
+        DO THE THING!!!!!!
+        if temp has right right put into stack
+        if temp has left left put into stack
+    """
 
     # STRETCH Goals -------------------------
     # Note: Research may be required
